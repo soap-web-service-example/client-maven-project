@@ -1,0 +1,36 @@
+1)  use maven-jaxb2-plugin maven plugin to generate the JAXB annotated stub classes.
+    See plugin- maven-jaxb2-plugin in pom.xml
+2)  Create a class called AwsECommerceServiceSoapClient.java which will act as a generic web
+    service client for all the requests to the web service.
+
+
+
+
+
+
+
+
+
+Sample online Working WSDL urls for Testing
+For sample wsdl please visit-
+    https://www.soapui.org/tutorials/aws.html
+    http://www.dneonline.com/calculator.asmx?wsdl
+#1. Global Weather Soap: This WSDL generates 2 service operations, GetCitiesByCountry (to get a list of all the cities for any country) and GetWeather (to get weather for any city/country combination).
+
+    WSDL URL: http://www.webservicex.com/globalweather.asmx?wsdl
+
+#2. US Weather by City Zip Codes: This WSDL generates 2 interfaces using which you can current Weather and Weather Forecast for next 7 days for any US city (using its Zip Code).
+
+    GetCityForecastByZIP – Allows you to get your City Forecast Over the Next 7 Days, which is updated hourly.
+
+    GetCityWeatherByZIP – Allows you to get your City’s Weather, which is updated hourly. U.S. Only
+
+    [U.S. Zip Codes Only – You can get US post codes from here]
+
+    WSDL URL: http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL
+
+#3. Bank BLZ Service (Bank Sort Codes): This WSDL generates request and response for a web service using which you can fetch Bank Sort Codes (called Bank BLZ codes) for banks in Germany.
+
+    In the request, you need to pass the BLZ code for any bank in Germany and it comes back with the bank details. You can get plenty of Bank BLZ codes at blzcodes.com.
+
+    WSDL URL: http://www.thomas-bayer.com/axis2/services/BLZService?wsdl
