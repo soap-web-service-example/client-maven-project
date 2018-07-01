@@ -46,7 +46,7 @@
 
             <plugin>
                 <!--
-                This plugin will generate the classes in the com.example.clientmavenproject.demo.soapClient package
+                This plugin will generate the classes in the com.example.clientmavenproject.demo.client.soapClient package
                 of src directory of the project
                 and this plugin will check the generated timestamp of the classes so that
                 those classes are generated only when any change in the WSDL happens.
@@ -64,12 +64,22 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <generatePackage>com.example.clientmavenproject.demo.aws.generated</generatePackage>
+                            <generatePackage>com.example.clientmavenproject.demo.generated.aws</generatePackage>
                             <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                             <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                             <schemaIncludes>
                                 <include>aws/*.wsdl</include>
                             </schemaIncludes>
+                            <!--
+                                Historically, the plugin supports the <forceRegenerate>true</forceRegenerate> configuration setting.
+                                When set to true, this setting will force the plugin to regenerate the sources - regardless of
+                                whether something was changed or not.
+
+                                the use of <forceRegenerate>true</forceRegenerate> is strongly discouraged.
+                                Consider removing this setting from your configuration (will default to false).
+                                If you need a full rebuild, do mvn clean instead.
+                            -->
+                            <forceRegenerate>true</forceRegenerate>
                         </configuration>
                     </execution>
                     <execution>
@@ -78,12 +88,22 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <generatePackage>com.example.clientmavenproject.demo.math.generated</generatePackage>
+                            <generatePackage>com.example.clientmavenproject.demo.generated.math</generatePackage>
                             <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                             <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
                             <schemaIncludes>
                                 <include>math/*.wsdl</include>
                             </schemaIncludes>
+                            <!--
+                                Historically, the plugin supports the <forceRegenerate>true</forceRegenerate> configuration setting.
+                                When set to true, this setting will force the plugin to regenerate the sources - regardless of
+                                whether something was changed or not.
+
+                                the use of <forceRegenerate>true</forceRegenerate> is strongly discouraged.
+                                Consider removing this setting from your configuration (will default to false).
+                                If you need a full rebuild, do mvn clean instead.
+                            -->
+                            <forceRegenerate>true</forceRegenerate>
                         </configuration>
                     </execution>
                 </executions>

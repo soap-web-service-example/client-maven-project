@@ -1,8 +1,8 @@
 package com.example.clientmavenproject.demo;
 
-import com.example.clientmavenproject.demo.math.generated.Add;
-import com.example.clientmavenproject.demo.math.generated.AddResponse;
-import com.example.clientmavenproject.demo.soapClient.CalculatorServiceSoapClient;
+import com.example.clientmavenproject.demo.generated.math.Add;
+import com.example.clientmavenproject.demo.generated.math.AddResponse;
+import com.example.clientmavenproject.demo.client.soapImpl.CalculatorServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ public class DemoApplication {
     }
 
     @Bean
-    CommandLineRunner lookup(CalculatorServiceSoapClient soapConnector) {
+    CommandLineRunner lookup(CalculatorServiceImpl soapConnector) {
         return args -> {
             Add add = new Add();
             add.setIntA(10);
