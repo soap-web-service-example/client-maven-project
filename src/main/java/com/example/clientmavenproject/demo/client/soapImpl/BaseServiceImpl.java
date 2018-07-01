@@ -10,7 +10,7 @@ public class BaseServiceImpl extends WebServiceGatewaySupport {
      * @param request
      * @return
      */
-    public Object callWebService(Object request) {
+    protected Object callWebService(Object request) {
         return getWebServiceTemplate().marshalSendAndReceive(request);
 //        return getWebServiceTemplate().sendSourceAndReceiveToResult(request,new Object());
     }
@@ -22,7 +22,7 @@ public class BaseServiceImpl extends WebServiceGatewaySupport {
      * @param request
      * @return
      */
-    public Object callWebService(String url, Object request) {
+    protected Object callWebService(String url, Object request) {
         return getWebServiceTemplate().marshalSendAndReceive(url, request);
     }
 }

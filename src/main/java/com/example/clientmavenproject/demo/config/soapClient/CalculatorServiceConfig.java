@@ -39,19 +39,11 @@ public class CalculatorServiceConfig {
 
     @Bean
     public CalculatorServiceImpl soapConnector() throws SOAPException {
-        SaajSoapMessageFactory messageFactory = new SaajSoapMessageFactory(
-                MessageFactory.newInstance());
-        messageFactory.setSoapVersion(SoapVersion.SOAP_12);
-        messageFactory.afterPropertiesSet();
-
-
         Jaxb2Marshaller marshaller = marshaller();
         CalculatorServiceImpl client = new CalculatorServiceImpl();
         client.setDefaultUri(calculatorServiceUrl);
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
-
-        client.setMessageFactory(messageFactory);
         return client;
     }
 
